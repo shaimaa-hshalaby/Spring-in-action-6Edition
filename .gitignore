@@ -1,0 +1,23 @@
+# macOS
+**/.DS_Store
+
+# IDEs
+**/.idea/
+**/*.iml
+**/.classpath
+**/.project
+**/.settings/
+**/.vscode/
+
+# Build outputs (Maven/Gradle/Java)
+**/target/
+**/build/
+**/.gradle/
+**/out/
+
+# Workspace/metadata (STS/Eclipse/etc.)
+**/metadata/
+**/.metadata/
+
+# Logs
+**/*.log
