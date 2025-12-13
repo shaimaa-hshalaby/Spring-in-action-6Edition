@@ -1,0 +1,12 @@
+{"properties": [
+	{
+	  "name": "taco.orders.pageSize",
+	  "type": "java.lang.String",
+	  "description": "A description for 'taco.orders.pageSize'"
+	},
+	{
+		"name":"taco.orders.default-note",
+		"type":"java.lang.String",
+		"description":"Test active profile"
+	}
+]}

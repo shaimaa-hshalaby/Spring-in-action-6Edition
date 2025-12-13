@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Taco Cloud</title>
+</head>
+<body>
+	<h1>Order List</h1>
+	<img th:src="@{/images/tacoCloud.jpeg}">
+	
+	 <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Placed At</th>
+                <th>Delivery Name</th>
+                <th>Address</th>
+                <th>Credit Card</th>
+                <th>Tacos</th>
+                <th>User</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.id}">1</td>
+                <td th:text="${#dates.format(order.placedAt, 'yyyy-MM-dd HH:mm:ss')}">2025-12-12 21:42</td>
+                <td th:text="${order.deliveryName}">deliveryName</td>
+                <td>
+                    <span th:text="${order.deliveryStreet}">deliveryStreet</span>,
+                    <span th:text="${order.deliveryCity}">deliveryCity</span>,
+                    <span th:text="${order.deliveryState}">deliveryState</span>,
+                    <span th:text="${order.deliveryZip}">deliveryZip</span>
+                </td>
+                <td>
+                    **** **** **** <span th:text="${order.ccNumber.substring(order.ccNumber.length() - 4)}">4242</span>
+                </td>
+                <td>
+                    <ul>
+                        <li th:each="taco : ${order.tacos}" th:text="${taco.name}">Taco Name</li>
+                    </ul>
+                </td>
+                <td th:text="${order.user.username}">username</td>
+            </tr>
+        </tbody>
+    </table>
+	
+	
+</body>
+</html>
